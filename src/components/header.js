@@ -20,7 +20,8 @@ const Header = (title, date, temp) => {
   headerTitle.textContent = title
   headerTemp.textContent = temp
 
-  return headerDiv
+  
+return headerDiv
 
   // TASK 1
   // ---------------------
@@ -39,8 +40,10 @@ const Header = (title, date, temp) => {
 
 
 const headerAppender = (selector) => {
-  const appendedItem = document.querySelector(selector)
-  appendedItem.appendchild(headerDiv)
+  const existingDiv = document.querySelector(selector)
+  const newHeader = document.createElement('div')
+  newHeader.classList.add('header-elements')
+  existingDiv.appendchild(Header(newHeader))
 
   // TASK 2
   // ---------------------
@@ -48,6 +51,8 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+
+  // return existingDiv
 }
 
 export { Header, headerAppender }
