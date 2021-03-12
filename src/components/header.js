@@ -20,6 +20,7 @@ const Header = (title, date, temp) => {
   headerTitle.textContent = title
   headerTemp.textContent = temp
 
+  return headerDiv
 
   // TASK 1
   // ---------------------
@@ -35,8 +36,11 @@ const Header = (title, date, temp) => {
   //
 }
 
+
+
 const headerAppender = (selector) => {
-  
+  const appendedItem = document.querySelector(selector)
+  appendedItem.appendchild(headerDiv)
 
   // TASK 2
   // ---------------------
