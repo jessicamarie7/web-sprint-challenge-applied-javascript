@@ -1,8 +1,39 @@
 const Card = (article) => {
+  
+  // Instantiating the elements
   const articleContainer = document.createElement('div')
   const articleHeadline = document.createElement('div')
   const articleAuthor = document.createElement('div')
-  const articleImg = document.createElement('div')
+  const imgContainer = document.createElement('div')
+  const articleImg = document.createElement('img')
+  const authorName = document.createElement('span')
+
+  // Appending the elements
+  articleContainer.appendChild(articleHeadline)
+  articleContainer.appendChild(articleAuthor)
+  articleAuthor.appendChild(imgContainer)
+  imgContainer.appendChild(articleImg)
+  articleAuthor.appendChild(authorName)
+
+  // Adding classes to the elements
+  articleContainer.classList.add('card')
+  articleHeadline.classList.add('headline')
+  articleAuthor.classList.add('author')
+  imgContainer.classList.add('img-container')
+    
+  // Adding text content and attributes
+  articleHeadline.textContent = article.headline
+  articleImg.setAttribute = ('src', article.authorPhoto)
+  authorName.textContent = article.authorName
+
+
+  // Adding listener for click events
+  document.querySelectorAll(articleContainer).addEventListener('click', event => {
+    console.log(article.headline)
+  
+  
+  return articleContainer
+  })
   
 
   // TASK 5
