@@ -1,3 +1,6 @@
+import axios from "axios";
+
+
 const Card = (article) => {
   
   // Instantiating the elements
@@ -57,6 +60,18 @@ const Card = (article) => {
 }
 
 const cardAppender = (selector) => {
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+  .then(res => {
+    Array.from(res).forEach(item => {
+    const createdCard = document.createElement('div')
+    createdCard.setAttribute = Card
+    selector.appendChild(createdCard)
+    createdCard.appendChild(item)
+    })
+  })
+  .catch(err => {
+    debugger
+  })
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
