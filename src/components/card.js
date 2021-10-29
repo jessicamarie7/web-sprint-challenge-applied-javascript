@@ -77,9 +77,6 @@ const cardAppender = (selector) => {
       allArticles.push(jsArt)
     });
   })
-  allArticles.forEach(article => {
-    cardDiv.appendChild(article)
-  })
   .catch(err => {
     console.error(err)
   })
